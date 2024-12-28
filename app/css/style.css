@@ -2214,6 +2214,61 @@ section.product .info .accordion > .item .content {
 section.product .info .accordion > .item.open > .title:after {
   content: "-";
 }
+section.product .info .part-bottom {
+  margin-top: 25px;
+}
+section.product .info .part-bottom .price {
+  color: #000;
+}
+section.product .info .part-bottom .line {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+section.product .info .part-bottom .quantity-selector {
+  border-radius: 8px;
+  border: 1px solid #432326;
+  display: flex;
+  font-family: "Assistant", sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  color: var(--color-text);
+}
+section.product .info .part-bottom .quantity-selector input {
+  font-family: "Assistant", sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  color: var(--color-text);
+  text-align: center;
+  width: 30px;
+}
+section.product .info .part-bottom .quantity-selector .btn {
+  cursor: pointer;
+  padding: 10px;
+}
+section.product .info .part-bottom .button {
+  font-family: "Assistant", sans-serif;
+  font-weight: 600;
+  font-size: 21px;
+  color: #fff;
+  border-radius: 8px;
+  background: var(--color-sec);
+  text-align: center;
+  padding: 12px;
+  flex-grow: 1;
+  transition: 0.25s;
+  white-space: nowrap;
+}
+section.product .info .part-bottom .button:hover {
+  background: var(--color-main);
+}
+section.product .info .part-bottom .button.button-buy {
+  background: var(--color-main);
+}
+section.product .info .part-bottom .button.button-buy:hover {
+  background: var(--color-sec);
+}
 
 /* --------------------- /Section product ---------------------- */
 .custom-select {
@@ -2233,6 +2288,43 @@ section.product .info .accordion > .item.open > .title:after {
   background-position: left 20px center;
   padding-left: 20px;
   cursor: pointer;
+}
+.custom-select .dropdown {
+  border: 1px solid #000;
+  border-top: none;
+  display: none;
+}
+.custom-select .dropdown .item {
+  padding: 13px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+.custom-select .dropdown .item.active {
+  background: rgba(229, 99, 165, 0.3);
+}
+
+.custom-multi-select {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 50px;
+  margin-top: 20px;
+}
+.custom-multi-select .item {
+  font-family: "Assistant", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  color: var(--color-text);
+  border: 2px solid #432326;
+  border-radius: 9px;
+  padding: 15px;
+  width: calc(50% - 25px);
+  transition: 0.25s;
+  cursor: pointer;
+}
+.custom-multi-select .item.active {
+  background: #E563A5;
+  color: #fff;
+  border-color: #E563A5;
 }
 
 .alignnone, .aligncenter, .alignright, .alignleft {

@@ -37,6 +37,23 @@ $(document).ready(function ($) {
             $currentItemContent.slideDown();
         }
     });
+
+
+    $('.custom-select .select-title').on('click', function() {
+        $(this).next('.dropdown').slideToggle();
+    });
+
+    // Handle click on dropdown items
+    $('.dropdown .item').on('click', function() {
+        $(this).siblings().removeClass('active');
+        $(this).addClass('active');
+        $(this).closest('.custom-select').find('.select-title').text($(this).text());
+        $(this).closest('.dropdown').slideUp();
+    });
+
+    $('.custom-multi-select .item').on('click', function() {
+        $(this).toggleClass('active');
+    });
    
 });
 

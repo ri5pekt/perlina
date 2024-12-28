@@ -476,6 +476,67 @@ section.product {
                 }
             }
         }
+
+
+        .part-bottom {
+            margin-top: 25px;
+            .price {
+                color: #000;
+            }
+
+            .line {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                margin-top: 25px;
+            }
+
+            .quantity-selector {
+                border-radius: 8px;
+                border: 1px solid #432326;
+                
+                display: flex;
+                @include f-b;
+                font-size: 24px;
+                color: var(--color-text);
+                input {
+                    @include f-b;
+                    font-size: 24px;
+                    color: var(--color-text);
+                    text-align: center;
+                    width: 30px;
+                }
+
+                .btn {
+                    cursor: pointer;
+                    padding: 10px;
+                }
+            }
+
+            .button {
+                @include f-sb;
+                font-size: 21px;
+                color: #fff;
+                border-radius: 8px;
+                background: var(--color-sec);
+                text-align: center;
+                padding: 12px;
+                flex-grow: 1;
+                transition: 0.25s;
+                white-space: nowrap;
+                
+                &:hover {
+                    background: var(--color-main);    
+                }
+
+                &.button-buy {
+                    background: var(--color-main);
+                    &:hover {
+                        background: var(--color-sec);    
+                    }
+                }
+            }
+        }
     }
 }
 /* --------------------- /Section product ---------------------- */
@@ -496,5 +557,43 @@ section.product {
         background-position: left 20px center;
         padding-left: 20px;
         cursor: pointer;
+    }
+
+    .dropdown {
+        border: 1px solid #000;
+        border-top: none;
+        display: none;
+        .item {
+            padding: 13px;
+            cursor: pointer;
+            transition: 0.25s;
+            &.active {
+                background: rgba(229, 99, 165, 0.3);
+            }
+        }
+    }
+}
+
+
+.custom-multi-select {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 50px;
+    margin-top: 20px;
+    .item {
+        @include f-b;
+        font-size: 18px;
+        color: var(--color-text);
+        border: 2px solid #432326;
+        border-radius: 9px;
+        padding: 15px;
+        width: calc(50% - 25px);
+        transition: 0.25s;
+        cursor: pointer;
+        &.active {
+            background: #E563A5;
+            color: #fff;
+            border-color: #E563A5;
+        }
     }
 }
