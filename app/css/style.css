@@ -2027,6 +2027,9 @@ section.product .sections {
 section.product .sections .section {
   width: calc(50% - 50px);
 }
+section.product .sliders .part-top {
+  display: none;
+}
 section.product .wrapper-sliders {
   max-width: 600px;
 }
@@ -2141,19 +2144,19 @@ section.product .wrapper-sliders .slider-product-thumbs .nav .arrow {
 section.product .wrapper-sliders .slider-product-thumbs .nav .arrow img {
   height: 15px;
 }
-section.product .info .product-title {
-  font-family: "Assistant", sans-serif;
-  font-weight: bold;
-  font-size: 32px;
-  color: var(--color-sec);
-}
-section.product .info .part-top {
+section.product .part-top {
   display: flex;
   gap: 25px;
   justify-content: space-between;
   align-items: center;
 }
-section.product .info .part-top .icons {
+section.product .part-top .product-title {
+  font-family: "Assistant", sans-serif;
+  font-weight: bold;
+  font-size: 32px;
+  color: var(--color-sec);
+}
+section.product .part-top .icons {
   display: flex;
   align-items: center;
   gap: 25px;
@@ -2195,6 +2198,7 @@ section.product .info .accordion > .item > .title {
   color: var(--color-sec);
   cursor: pointer;
   position: relative;
+  padding-left: 25px;
 }
 section.product .info .accordion > .item > .title:after {
   content: "+";
@@ -2269,6 +2273,38 @@ section.product .info .part-bottom .button.button-buy {
 section.product .info .part-bottom .button.button-buy:hover {
   background: var(--color-sec);
 }
+@media only screen and (max-width: 950px) {
+  section.product .sections {
+    gap: 30px;
+  }
+  section.product .sections .section {
+    width: 100%;
+  }
+  section.product .sliders .part-top {
+    display: flex;
+  }
+  section.product .info .part-top {
+    display: none;
+  }
+  section.product .info .price {
+    font-size: 28px;
+  }
+  section.product .info .accordion > .item {
+    padding: 15px 0;
+  }
+  section.product .info .accordion > .item > .title {
+    font-size: 19px;
+  }
+  section.product .info .part-bottom .line {
+    flex-wrap: wrap;
+  }
+  section.product .wrapper-sliders {
+    margin-top: 25px;
+  }
+  section.product .wrapper-sliders .slider-product-main {
+    height: 220px;
+  }
+}
 
 /* --------------------- /Section product ---------------------- */
 .custom-select {
@@ -2325,6 +2361,15 @@ section.product .info .part-bottom .button.button-buy:hover {
   background: #E563A5;
   color: #fff;
   border-color: #E563A5;
+}
+@media only screen and (max-width: 950px) {
+  .custom-multi-select {
+    gap: 20px 20px;
+  }
+  .custom-multi-select .item {
+    padding: 10px;
+    width: calc(50% - 10px);
+  }
 }
 
 .alignnone, .aligncenter, .alignright, .alignleft {

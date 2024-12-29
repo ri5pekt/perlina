@@ -280,7 +280,11 @@ section.product {
             width: calc(50% - 50px);
         }
     }
-
+    .sliders {
+        .part-top {
+            display: none;
+        }
+    }
     .wrapper-sliders {
         max-width: 600px;
         .slider-product-main {
@@ -395,26 +399,25 @@ section.product {
         }
     }
 
+    .part-top {
+        display: flex;
+        gap: 25px;
+        justify-content: space-between;
+        align-items: center;
 
-    .info {
         .product-title {
             @include f-b;
             font-size: 32px;
             color: var(--color-sec);
         }
-        .part-top {
+
+        .icons {
             display: flex;
-            gap: 25px;
-            justify-content: space-between;
             align-items: center;
-
-            .icons {
-                display: flex;
-                align-items: center;
-                gap: 25px;
-            }
+            gap: 25px;
         }
-
+    }
+    .info {
         .price {
             @include f-b;
             font-size: 32px;
@@ -451,6 +454,7 @@ section.product {
                     color: var(--color-sec);
                     cursor: pointer;
                     position: relative;
+                    padding-left: 25px;
                     &:after {
                         content: "+";
                         @include f-b;
@@ -538,6 +542,48 @@ section.product {
             }
         }
     }
+
+    @media only screen and (max-width : $mw) {
+        .sections {
+            gap: 30px;
+            .section {
+                width: 100%;
+            }
+        }
+        .sliders {
+            .part-top {
+                display: flex;
+            }
+        }
+        .info {
+            .part-top {
+                display: none;
+            }
+            .price {
+                font-size: 28px;
+            }
+            .accordion {
+                > .item {
+                    padding: 15px 0;
+                    > .title {
+                        font-size: 19px;
+                    }
+                }
+            }
+            .part-bottom {
+                .line {
+                    flex-wrap: wrap;
+                }
+            }
+        }
+        .wrapper-sliders {
+            margin-top: 25px;
+            .slider-product-main {
+                height: 220px;
+            }
+        }
+
+    }
 }
 /* --------------------- /Section product ---------------------- */
 
@@ -594,6 +640,14 @@ section.product {
             background: #E563A5;
             color: #fff;
             border-color: #E563A5;
+        }
+    }
+
+    @media only screen and (max-width : $mw) {
+        gap: 20px 20px;
+        .item {
+            padding: 10px;
+            width: calc(50% - 10px);
         }
     }
 }
