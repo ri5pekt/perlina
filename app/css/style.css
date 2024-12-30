@@ -520,6 +520,49 @@ body.scrolled .sm_menu_outer {
   color: var(--color-main);
 }
 
+.like-widget {
+  height: 22px;
+  width: 22px;
+}
+.like-widget img {
+  position: absolute;
+  transition: 0.25s;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.like-widget.not-liked img.liked {
+  opacity: 0;
+}
+.like-widget.not-liked img.not-liked {
+  opacity: 1;
+}
+.like-widget.liked img.liked {
+  opacity: 1;
+}
+.like-widget.liked img.not-liked {
+  opacity: 0;
+}
+.like-widget.loading:after {
+  width: 25px;
+  height: 25px;
+  border: 3px solid #E563A5;
+  border-bottom-color: transparent;
+}
+
+.wpcf7-form .wpcf7-response-output {
+  position: absolute;
+  bottom: -40px;
+  color: red;
+  border: none;
+}
+.wpcf7-form .wpcf7-not-valid-tip {
+  font-size: 12px;
+  position: absolute;
+  bottom: 28px;
+  right: 4px;
+}
+
 /* ---------------------- header ---------------------- */
 header {
   position: fixed;
@@ -1169,6 +1212,7 @@ section.categories .boxes .box {
   transition: 0.5s;
   border: 1px solid transparent;
   border-radius: 9px;
+  display: block;
 }
 .box-product .image {
   height: 190px;
@@ -1300,9 +1344,11 @@ section.slider-products .swiper-container .nav {
   align-items: center;
   justify-content: space-between;
   z-index: 99;
+  pointer-events: none;
 }
 section.slider-products .swiper-container .nav .arrow {
   cursor: pointer;
+  pointer-events: all;
 }
 @media only screen and (max-width: 950px) {
   section.slider-products .swiper-container {

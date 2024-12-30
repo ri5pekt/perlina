@@ -429,3 +429,52 @@ body.scrolled {
 	}
 }
 
+.like-widget {
+	height: 22px;
+	width: 22px;
+	img {
+		position: absolute;
+		transition: 0.25s;
+		top: 0;
+		left: 0;
+		opacity: 0;
+	}
+	&.not-liked {
+		img.liked {
+			opacity: 0;
+		}
+		img.not-liked {
+			opacity: 1;
+		}
+	}
+	&.liked {
+		img.liked {
+			opacity: 1;
+		}
+		img.not-liked {
+			opacity: 0;
+		}
+	}
+	&.loading:after {
+		width: 25px;
+		height: 25px;
+		border: 3px solid #E563A5;
+		border-bottom-color: transparent;
+	}
+}
+
+
+.wpcf7-form {
+	.wpcf7-response-output {
+		position: absolute;
+		bottom: -40px;
+		color: red;
+		border: none;
+	}
+	.wpcf7-not-valid-tip {
+		font-size: 12px;
+		position: absolute;
+		bottom: 28px;
+		right: 4px;
+	}
+}

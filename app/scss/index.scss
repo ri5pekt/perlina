@@ -725,6 +725,7 @@ section.categories {
     transition: 0.5s;
     border: 1px solid transparent;
     border-radius: 9px;
+    display: block;
 
     .image {
         height: 190px;
@@ -856,9 +857,10 @@ section.slider-products {
             align-items: center;
             justify-content: space-between;
             z-index: 99;
-
+            pointer-events: none;
             .arrow {
                 cursor: pointer;
+                pointer-events: all;
             }
         }
     }
