@@ -387,6 +387,7 @@ header ul.main-menu {
 
 header .mega-menu {
     background: #fff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     position: absolute;
     top: 100%;
     width: 100%;
@@ -1248,7 +1249,7 @@ footer {
         }
 
         .contacts {
-            a {
+            a, .item {
                 display: flex;
                 align-items: center;
                 @include f-r;

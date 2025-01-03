@@ -528,7 +528,7 @@ section.product {
                 flex-grow: 1;
                 transition: 0.25s;
                 white-space: nowrap;
-                
+                cursor: pointer;
                 &:hover {
                     background: var(--color-main);    
                 }

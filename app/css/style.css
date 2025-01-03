@@ -904,6 +904,7 @@ header ul.main-menu > li:hover > .mega-menu {
 
 header .mega-menu {
   background: #fff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
   position: absolute;
   top: 100%;
   width: 100%;
@@ -1714,7 +1715,7 @@ footer .part-top .cols .col ul a {
 footer .part-top .cols .col ul a:hover {
   color: var(--color-main);
 }
-footer .part-top .contacts a {
+footer .part-top .contacts a, footer .part-top .contacts .item {
   display: flex;
   align-items: center;
   font-family: "Assistant", sans-serif;
@@ -1726,13 +1727,13 @@ footer .part-top .contacts a {
   line-height: 1;
   white-space: nowrap;
 }
-footer .part-top .contacts a:first-child {
+footer .part-top .contacts a:first-child, footer .part-top .contacts .item:first-child {
   margin-top: 0;
 }
-footer .part-top .contacts a:hover {
+footer .part-top .contacts a:hover, footer .part-top .contacts .item:hover {
   color: var(--color-main);
 }
-footer .part-top .contacts a img {
+footer .part-top .contacts a img, footer .part-top .contacts .item img {
   margin-left: 5px;
 }
 footer .part-top .social {
@@ -2309,6 +2310,7 @@ section.product .info .part-bottom .button {
   flex-grow: 1;
   transition: 0.25s;
   white-space: nowrap;
+  cursor: pointer;
 }
 section.product .info .part-bottom .button:hover {
   background: var(--color-main);
