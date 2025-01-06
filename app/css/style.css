@@ -586,6 +586,13 @@ body.scrolled .sm_menu_outer {
   cursor: pointer;
 }
 
+.wpcf7 input[type=url], .wpcf7 input[type=email], .wpcf7 input[type=tel] {
+  direction: rtl;
+}
+.wpcf7 .wpcf7-spinner {
+  position: absolute;
+}
+
 /* ---------------------- header ---------------------- */
 header {
   position: fixed;
@@ -1657,6 +1664,21 @@ section.contact-bottom form {
   margin-top: 25px;
   max-width: 100%;
 }
+section.contact-bottom form .wpcf7-spinner {
+  position: absolute;
+  left: 10px;
+  top: 14px;
+}
+section.contact-bottom form .wpcf7-response-output {
+  position: absolute;
+  margin: 0;
+  border: none;
+  font-size: 13px;
+  bottom: -20px;
+}
+section.contact-bottom form .wpcf7-not-valid-tip {
+  bottom: 2px;
+}
 section.contact-bottom form .wpcf7-form-control-wrap {
   display: block;
   max-width: 200px;
@@ -2106,7 +2128,7 @@ section.products .boxes .box {
     width: calc(33.33% - 8px);
   }
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 950px) {
   section.products .boxes {
     gap: 25px 10px;
   }
@@ -2837,6 +2859,191 @@ section.product .info .part-bottom .button.button-buy.loading:after {
   font-size: 18px;
   color: var(--color-text);
   padding: 10px 15px;
+}
+
+/* ---------------------- Section wishlist ---------------------- */
+section.wishlist .part-top {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+section.wishlist .part-top .title {
+  font-family: "Assistant", sans-serif;
+  font-weight: bold;
+  font-size: 32px;
+  color: var(--color-sec);
+  flex-grow: 1;
+}
+section.wishlist .wpcf7 {
+  position: relative;
+  display: block;
+  max-width: 100%;
+}
+section.wishlist .wpcf7 .wpcf7-spinner {
+  position: absolute;
+  left: 10px;
+  top: 14px;
+}
+section.wishlist .wpcf7 .wpcf7-response-output {
+  position: absolute;
+  margin: 0;
+  border: none;
+  font-size: 13px;
+  bottom: -20px;
+}
+section.wishlist .wpcf7 .wpcf7-not-valid-tip {
+  bottom: 2px;
+}
+section.wishlist .wpcf7 .wpcf7-form-control-wrap {
+  display: block;
+  max-width: 100%;
+}
+section.wishlist .wpcf7 input[type=email] {
+  border: 1px solid #432326;
+  border-radius: 9px;
+  font-family: "Assistant", sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  color: var(--color-text);
+  padding: 12px 10px;
+  display: block;
+  max-width: 100%;
+}
+section.wishlist .wpcf7 .wrapper-submit {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  padding: 5px;
+}
+section.wishlist .wpcf7 .wrapper-submit .wpcf7-submit {
+  font-family: "Assistant", sans-serif;
+  font-weight: 600;
+  font-size: 21px;
+  color: #fff;
+  background: var(--color-sec);
+  border-radius: 9px;
+  padding: 6px 16px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+section.wishlist .wpcf7 .wrapper-submit .wpcf7-submit:hover {
+  background: var(--color-main);
+}
+section.wishlist .button-add-to-cart-all {
+  font-family: "Assistant", sans-serif;
+  font-weight: 600;
+  font-size: 21px;
+  color: #fff;
+  background: var(--color-main);
+  padding: 12px 15px;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: 0.25s;
+  position: relative;
+}
+section.wishlist .button-add-to-cart-all:hover {
+  background: var(--color-sec);
+}
+section.wishlist .button-add-to-cart-all.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+section.wishlist .button-add-to-cart-all.loading:after {
+  border: 3px solid #fff;
+  border-bottom-color: transparent;
+}
+section.wishlist .boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 34px;
+  margin-top: 45px;
+  position: relative;
+}
+section.wishlist .boxes .box {
+  width: calc(25% - 26px);
+}
+section.wishlist .boxes .box-product {
+  border-color: rgba(0, 0, 0, 0.5);
+}
+section.wishlist .boxes .box-product .buttons {
+  opacity: 1;
+}
+section.wishlist .boxes .box-product .like {
+  position: absolute;
+  left: auto;
+  right: 10px;
+  top: 10px;
+}
+@media only screen and (max-width: 1200px) {
+  section.wishlist .boxes .box {
+    width: calc(33.33% - 23px);
+  }
+}
+@media only screen and (max-width: 950px) {
+  section.wishlist .part-top {
+    flex-direction: column;
+    gap: 25px;
+  }
+  section.wishlist .boxes {
+    gap: 25px 10px;
+  }
+  section.wishlist .boxes .box {
+    width: calc(50% - 5px);
+  }
+}
+
+/* --------------------- /Section wishlist ---------------------- */
+/* ---------------------- Section blog ---------------------- */
+section.blog .boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+section.blog .boxes .box {
+  width: calc(33.333% - 34px);
+}
+
+/* --------------------- /Section blog ---------------------- */
+.box-post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
+  border-radius: 9px;
+  overflow: hidden;
+}
+.box-post .image {
+  height: 320px;
+  width: 100%;
+  text-align: center;
+}
+.box-post .image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.box-post .title {
+  padding: 25px;
+  font-family: "Assistant", sans-serif;
+  font-weight: normal;
+  font-size: 21px;
+  color: var(--color-text);
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box-post .button {
+  font-family: "Assistant", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #fff;
+  background: var(--color-sec);
+  border-radius: 8px;
+  padding: 8px 28px;
 }
 
 .alignnone, .aligncenter, .alignright, .alignleft {

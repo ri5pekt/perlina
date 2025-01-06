@@ -1161,6 +1161,21 @@ section.contact-bottom {
         gap: 20px;
         margin-top: 25px;
         max-width: 100%;
+        .wpcf7-spinner {
+            position: absolute;
+            left: 10px;
+            top: 14px;
+        }
+        .wpcf7-response-output {
+            position: absolute;
+            margin: 0;
+            border: none;
+            font-size: 13px;
+            bottom: -20px;
+        }
+        .wpcf7-not-valid-tip {
+            bottom: 2px;
+        }
         .wpcf7-form-control-wrap {
             display: block;
             max-width: 200px;

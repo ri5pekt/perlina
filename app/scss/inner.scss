@@ -258,7 +258,7 @@ section.products {
         }
     }
 
-    @media only screen and (max-width : $tw) {
+    @media only screen and (max-width : $mw) {
         .boxes {
             gap: 25px 10px;
             .box {
@@ -1053,5 +1053,196 @@ section.product {
         font-size: 18px;
         color: var(--color-text);
         padding: 10px 15px;
+    }
+}
+
+/* ---------------------- Section wishlist ---------------------- */
+section.wishlist {
+    .part-top {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        .title {
+            @include f-b;
+            font-size: 32px;
+            color: var(--color-sec);
+            flex-grow: 1;
+        }
+    }
+
+    .wpcf7 {
+        position: relative;
+        display: block;
+        max-width: 100%;
+        .wpcf7-spinner {
+            position: absolute;
+            left: 10px;
+            top: 14px;
+        }
+        .wpcf7-response-output {
+            position: absolute;
+            margin: 0;
+            border: none;
+            font-size: 13px;
+            bottom: -20px;
+        }
+        .wpcf7-not-valid-tip {
+            bottom: 2px;
+        }
+        .wpcf7-form-control-wrap {
+            display: block;
+            max-width: 100%;
+        }
+        input[type="email"] {
+            border: 1px solid #432326;
+            border-radius: 9px;
+            @include f-r;
+            font-size: 18px;
+            color: var(--color-text);
+            padding: 12px 10px;
+            display: block;
+            max-width: 100%;
+        }
+        .wrapper-submit {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            padding: 5px;
+            .wpcf7-submit {
+                @include f-sb;
+                font-size: 21px;
+                color: #fff;
+                background: var(--color-sec);
+                border-radius: 9px;
+                padding: 6px 16px;
+                cursor: pointer;
+                transition: 0.25s;
+                &:hover {
+                    background: var(--color-main);
+                }
+            }
+        }
+    }
+
+    .button-add-to-cart-all {
+        @include f-sb;
+        font-size: 21px;
+        color: #fff;
+        background: var(--color-main);
+        padding: 12px 15px;
+        border-radius: 9px;
+        cursor: pointer;
+        transition: 0.25s;
+        &:hover {
+            background: var(--color-sec);
+        }
+        position: relative;
+        &.loading {
+            opacity: 0.7;
+            pointer-events: none;
+            &:after {
+                border: 3px solid #fff;
+                border-bottom-color: transparent;
+            }
+        }
+    }
+
+    .boxes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 34px;
+        margin-top: 45px;
+        position: relative;
+        .box {
+            width: calc(25% - 26px);
+        }
+
+        .box-product {
+            border-color: rgba(0, 0, 0, 0.5);
+            .buttons {
+                opacity: 1;
+            }
+            .like {
+                position: absolute;
+                left: auto;
+                right: 10px;
+                top: 10px;
+            }
+        }
+    }
+
+    @media only screen and (max-width : $tw) {
+        .boxes {
+            .box {
+                width: calc(33.33% - 23px);
+            }
+        }
+    }
+
+    @media only screen and (max-width : $mw) {
+        .part-top {
+            flex-direction: column;
+            gap: 25px;
+        }
+        .boxes {
+            gap: 25px 10px;
+            .box {
+                width: calc(50% - 5px);
+            }
+        }
+    }
+}
+/* --------------------- /Section wishlist ---------------------- */
+
+/* ---------------------- Section blog ---------------------- */
+section.blog {
+    .boxes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px;
+        .box {
+            width: calc(33.333% - 34px);
+        }
+    }
+}
+/* --------------------- /Section blog ---------------------- */
+
+
+.box-post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+    border-radius: 9px;
+    overflow: hidden;
+    .image {
+        height: 320px;
+        width: 100%;
+        text-align: center;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    .title {
+        padding: 25px;
+        @include f-r;
+        font-size: 21px;
+        color: var(--color-text);
+        text-align: center;
+        flex-grow: 1;
+        @include flex-center;
+    }
+
+    .button {
+        @include f-sb;
+        font-size: 18px;
+        color: #fff;
+        background: var(--color-sec);
+        border-radius: 8px;
+        padding: 8px 28px;
     }
 }

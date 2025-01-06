@@ -502,3 +502,12 @@ body.scrolled {
 		cursor: pointer;
 	}
 }
+
+.wpcf7 {
+	input[type="url"], input[type="email"], input[type="tel"] {
+		direction: rtl;
+	}
+	.wpcf7-spinner {
+		position: absolute;
+	}
+}
