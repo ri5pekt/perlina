@@ -630,11 +630,13 @@ section.hey-you {
 
 /* ---------------------- Section categories ---------------------- */
 section.categories {
+    .section-title {
+        margin-bottom: 55px;
+    }
     .boxes {
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
-        margin-top: 55px;
         .box {
             width: calc(33.33% - 14px);
             
@@ -642,9 +644,11 @@ section.categories {
     }
 
     @media only screen and (max-width : $mw) {
+        .section-title {
+            margin-bottom: 35px;
+        }
         .boxes {
             justify-content: center;
-            margin-top: 35px;
             .box {
                 width: calc(100%);
                 max-width: 400px;
