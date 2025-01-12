@@ -813,6 +813,25 @@ header .search-cont .icon {
 header .search-cont.mobile {
   display: none;
 }
+@media only screen and (max-width: 950px) {
+  header .search-cont {
+    padding: 8px 8px;
+    position: absolute;
+    top: 35px;
+    left: 10px;
+    opacity: 0;
+    visibility: hidden;
+  }
+  header .search-cont.mobile {
+    display: block;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  }
+  header .search-cont.open {
+    top: 65px;
+    opacity: 1;
+    visibility: visible;
+  }
+}
 
 header ul.top-menu {
   display: flex;
@@ -3975,7 +3994,8 @@ section.woocommerce-cart .cart-collaterals .shop_table {
 section.woocommerce-cart .cart-collaterals .shop_table th {
   white-space: nowrap;
 }
-section.woocommerce-cart .cart-collaterals .shop_table td, section.woocommerce-cart .cart-collaterals .shop_table th {
+section.woocommerce-cart .cart-collaterals .shop_table td,
+section.woocommerce-cart .cart-collaterals .shop_table th {
   padding: 10px;
   border-bottom: 1px solid rgba(46, 46, 47, 0.3);
 }
@@ -4004,7 +4024,8 @@ section.woocommerce-cart .cart-collaterals .checkout-button:hover {
 section.woocommerce-cart .cart-collaterals .shipping-calculator-form {
   padding: 20px 0;
 }
-section.woocommerce-cart .cart-collaterals .shipping-calculator-form input, section.woocommerce-cart .cart-collaterals .shipping-calculator-form select {
+section.woocommerce-cart .cart-collaterals .shipping-calculator-form input,
+section.woocommerce-cart .cart-collaterals .shipping-calculator-form select {
   font-family: "Assistant", sans-serif;
   font-weight: normal;
   font-size: 12px;
@@ -4143,7 +4164,9 @@ section.woocommerce-checkout .woocommerce-checkout-review-order-table {
 section.woocommerce-checkout .section-fields label {
   display: none;
 }
-section.woocommerce-checkout .section-fields input, section.woocommerce-checkout .section-fields select, section.woocommerce-checkout .section-fields textarea {
+section.woocommerce-checkout .section-fields input,
+section.woocommerce-checkout .section-fields select,
+section.woocommerce-checkout .section-fields textarea {
   font-family: "Assistant", sans-serif;
   font-weight: normal;
   font-size: 18px;
@@ -4152,6 +4175,16 @@ section.woocommerce-checkout .section-fields input, section.woocommerce-checkout
   border-radius: 9px;
   padding: 10px;
   width: 100%;
+}
+section.woocommerce-checkout .section-fields .form-row.woocommerce-invalid input,
+section.woocommerce-checkout .section-fields .form-row.woocommerce-invalid select,
+section.woocommerce-checkout .section-fields .form-row.woocommerce-invalid textarea {
+  border-color: red;
+}
+section.woocommerce-checkout .section-fields .checkout-inline-error-message {
+  position: absolute;
+  color: red;
+  font-size: 13px;
 }
 section.woocommerce-checkout .section-fields .woocommerce-billing-fields__field-wrapper,
 section.woocommerce-checkout .section-fields .woocommerce-shipping-fields__field-wrapper,
@@ -4226,6 +4259,11 @@ section.woocommerce-checkout .section-fields .date-buttons .button {
   cursor: pointer;
   transition: 0.25s;
 }
+section.woocommerce-checkout .section-fields .date-buttons .button.active {
+  background: var(--color-main);
+  color: #fff;
+  border-color: var(--color-main);
+}
 section.woocommerce-checkout h3 {
   font-family: "Assistant", sans-serif;
   font-weight: normal;
@@ -4245,7 +4283,7 @@ section.woocommerce-checkout .section-order-review .woocommerce-checkout-review-
   text-align: right;
 }
 section.woocommerce-checkout .section-order-review .woocommerce-checkout-review-order-table .product-total {
-  text-align: left;
+  text-align: right;
 }
 section.woocommerce-checkout .section-order-review .woocommerce-checkout-review-order-table thead th {
   font-family: "Assistant", sans-serif;
@@ -4274,7 +4312,7 @@ section.woocommerce-checkout .section-order-review .woocommerce-checkout-review-
   font-family: "Assistant", sans-serif;
   font-weight: bold;
   font-size: 24px;
-  color: #E872AE;
+  color: #e872ae;
 }
 section.woocommerce-checkout .section-order-review .woocommerce-checkout-review-order-table .product-name .variation {
   margin-top: 10px;
@@ -4303,6 +4341,25 @@ section.woocommerce-checkout .section-order-review .woocommerce-checkout-payment
   font-size: 18px;
   color: var(--color-text);
 }
+section.woocommerce-checkout .section-order-review .woocommerce-checkout-payment .wc_payment_methods {
+  font-family: "Assistant", sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  color: var(--color-text);
+}
+section.woocommerce-checkout .section-order-review .woocommerce-checkout-payment .wc_payment_methods li {
+  margin-top: 10px;
+}
+section.woocommerce-checkout .section-order-review .woocommerce-checkout-payment .payment_box {
+  font-size: 16px;
+  color: #919191;
+  margin-top: 5px;
+  padding-right: 25px;
+}
+section.woocommerce-checkout .section-order-review .woocommerce-checkout-payment .woocommerce-privacy-policy-text {
+  margin-top: 25px;
+  color: #919191;
+}
 section.woocommerce-checkout .section-order-review .woocommerce-checkout-payment #place_order {
   font-family: "Assistant", sans-serif;
   font-weight: 600;
@@ -4323,6 +4380,186 @@ section.woocommerce-checkout .section-order-review .woocommerce-checkout-payment
 section.woocommerce-checkout .section-order-review .woocommerce-checkout-payment #place_order:hover {
   background: var(--color-sec);
 }
+@media only screen and (max-width: 950px) {
+  section.woocommerce-checkout .checkout-sections {
+    flex-wrap: wrap;
+  }
+  section.woocommerce-checkout .checkout-sections .section.section-fields {
+    width: 100%;
+  }
+  section.woocommerce-checkout .checkout-sections .section.section-order-review {
+    width: 100%;
+  }
+  section.woocommerce-checkout .section-fields .woocommerce-billing-fields__field-wrapper .form-row#shipping_mobile_phone_field, section.woocommerce-checkout .section-fields .woocommerce-billing-fields__field-wrapper .form-row#shipping_additional_phone_field, section.woocommerce-checkout .section-fields .woocommerce-billing-fields__field-wrapper .form-row#shipping_company_field,
+  section.woocommerce-checkout .section-fields .woocommerce-shipping-fields__field-wrapper .form-row#shipping_mobile_phone_field,
+  section.woocommerce-checkout .section-fields .woocommerce-shipping-fields__field-wrapper .form-row#shipping_additional_phone_field,
+  section.woocommerce-checkout .section-fields .woocommerce-shipping-fields__field-wrapper .form-row#shipping_company_field,
+  section.woocommerce-checkout .section-fields .woocommerce-additional-fields__field-wrapper .form-row#shipping_mobile_phone_field,
+  section.woocommerce-checkout .section-fields .woocommerce-additional-fields__field-wrapper .form-row#shipping_additional_phone_field,
+  section.woocommerce-checkout .section-fields .woocommerce-additional-fields__field-wrapper .form-row#shipping_company_field {
+    width: calc(50% - 10px);
+  }
+  section.woocommerce-checkout .section-fields .woocommerce-billing-fields__field-wrapper .form-row#shipping_address_1_field,
+  section.woocommerce-checkout .section-fields .woocommerce-shipping-fields__field-wrapper .form-row#shipping_address_1_field,
+  section.woocommerce-checkout .section-fields .woocommerce-additional-fields__field-wrapper .form-row#shipping_address_1_field {
+    width: calc(50% - 10px);
+  }
+  section.woocommerce-checkout .section-fields .woocommerce-billing-fields__field-wrapper .form-row#shipping_house_number_field, section.woocommerce-checkout .section-fields .woocommerce-billing-fields__field-wrapper .form-row#shipping_floor_field, section.woocommerce-checkout .section-fields .woocommerce-billing-fields__field-wrapper .form-row#shipping_apartment_field, section.woocommerce-checkout .section-fields .woocommerce-billing-fields__field-wrapper .form-row#shipping_entry_code_field,
+  section.woocommerce-checkout .section-fields .woocommerce-shipping-fields__field-wrapper .form-row#shipping_house_number_field,
+  section.woocommerce-checkout .section-fields .woocommerce-shipping-fields__field-wrapper .form-row#shipping_floor_field,
+  section.woocommerce-checkout .section-fields .woocommerce-shipping-fields__field-wrapper .form-row#shipping_apartment_field,
+  section.woocommerce-checkout .section-fields .woocommerce-shipping-fields__field-wrapper .form-row#shipping_entry_code_field,
+  section.woocommerce-checkout .section-fields .woocommerce-additional-fields__field-wrapper .form-row#shipping_house_number_field,
+  section.woocommerce-checkout .section-fields .woocommerce-additional-fields__field-wrapper .form-row#shipping_floor_field,
+  section.woocommerce-checkout .section-fields .woocommerce-additional-fields__field-wrapper .form-row#shipping_apartment_field,
+  section.woocommerce-checkout .section-fields .woocommerce-additional-fields__field-wrapper .form-row#shipping_entry_code_field {
+    width: calc(50% - 10px);
+  }
+  section.woocommerce-checkout .section-fields .woocommerce-billing-fields__field-wrapper .form-row.date-buttons, section.woocommerce-checkout .section-fields .woocommerce-billing-fields__field-wrapper .form-row#shipping_date_field, section.woocommerce-checkout .section-fields .woocommerce-billing-fields__field-wrapper .form-row#shipping_delivery_time_field,
+  section.woocommerce-checkout .section-fields .woocommerce-shipping-fields__field-wrapper .form-row.date-buttons,
+  section.woocommerce-checkout .section-fields .woocommerce-shipping-fields__field-wrapper .form-row#shipping_date_field,
+  section.woocommerce-checkout .section-fields .woocommerce-shipping-fields__field-wrapper .form-row#shipping_delivery_time_field,
+  section.woocommerce-checkout .section-fields .woocommerce-additional-fields__field-wrapper .form-row.date-buttons,
+  section.woocommerce-checkout .section-fields .woocommerce-additional-fields__field-wrapper .form-row#shipping_date_field,
+  section.woocommerce-checkout .section-fields .woocommerce-additional-fields__field-wrapper .form-row#shipping_delivery_time_field {
+    width: calc(50% - 10px);
+  }
+  section.woocommerce-checkout .section-fields .woocommerce-billing-fields__field-wrapper .form-row.date-buttons,
+  section.woocommerce-checkout .section-fields .woocommerce-shipping-fields__field-wrapper .form-row.date-buttons,
+  section.woocommerce-checkout .section-fields .woocommerce-additional-fields__field-wrapper .form-row.date-buttons {
+    width: 100%;
+  }
+  section.woocommerce-checkout .section-fields .woocommerce-billing-fields__field-wrapper .form-row#order_comments_field, section.woocommerce-checkout .section-fields .woocommerce-billing-fields__field-wrapper .form-row#order_comments_2_field,
+  section.woocommerce-checkout .section-fields .woocommerce-shipping-fields__field-wrapper .form-row#order_comments_field,
+  section.woocommerce-checkout .section-fields .woocommerce-shipping-fields__field-wrapper .form-row#order_comments_2_field,
+  section.woocommerce-checkout .section-fields .woocommerce-additional-fields__field-wrapper .form-row#order_comments_field,
+  section.woocommerce-checkout .section-fields .woocommerce-additional-fields__field-wrapper .form-row#order_comments_2_field {
+    width: 100%;
+  }
+  section.woocommerce-checkout .section-fields .woocommerce-shipping-fields {
+    margin-top: 35px;
+  }
+  section.woocommerce-checkout h3 {
+    margin-bottom: 20px;
+  }
+}
 
 /* --------------------- /Section woocommerce-checkout ---------------------- */
+/* Container for the entire Thank You section */
+section.woocommerce-thank-you {
+  padding: 2rem 1rem;
+  color: var(--color-text);
+  /* The main container that WooCommerce uses */
+  /* Order overview list (Order number, date, email, etc.) */
+  /* The product table (products, subtotal, shipping, total) */
+  /* Billing and Shipping sections */
+  /* Comments / Greeting */
+}
+section.woocommerce-thank-you .section-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff; /* or a very light background if you want */
+  border-radius: 4px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  line-height: 1.5;
+}
+section.woocommerce-thank-you h2,
+section.woocommerce-thank-you h3 {
+  color: var(--color-main);
+  margin-top: 1.2rem;
+  margin-bottom: 1rem;
+}
+section.woocommerce-thank-you .woocommerce {
+  color: var(--color-text);
+  /* The big .woocommerce-order wrapper */
+}
+section.woocommerce-thank-you .woocommerce .woocommerce-order {
+  /* If you want spacing below each section */
+}
+section.woocommerce-thank-you .woocommerce .woocommerce-order > * {
+  margin-bottom: 1.5rem;
+}
+section.woocommerce-thank-you .order-overview {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+section.woocommerce-thank-you .order-overview li {
+  margin-bottom: 0.5rem;
+}
+section.woocommerce-thank-you .order-overview li strong {
+  color: var(--color-sec);
+  margin-right: 0.25rem;
+}
+section.woocommerce-thank-you .shop_table.order_details {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+  /* Subtotals, shipping, etc. */
+}
+section.woocommerce-thank-you .shop_table.order_details thead th {
+  background-color: var(--color-main);
+  color: #fff;
+  padding: 0.75rem;
+  text-align: right;
+  font-weight: 600;
+}
+section.woocommerce-thank-you .shop_table.order_details tbody tr td,
+section.woocommerce-thank-you .shop_table.order_details tfoot tr th,
+section.woocommerce-thank-you .shop_table.order_details tfoot tr td {
+  border: 1px solid #eee;
+  padding: 0.75rem;
+  vertical-align: middle;
+}
+section.woocommerce-thank-you .shop_table.order_details tfoot th {
+  font-weight: 600;
+  background: #f7f7f7;
+}
+section.woocommerce-thank-you .shop_table.order_details tfoot td {
+  text-align: right;
+  background: #fafafa;
+}
+section.woocommerce-thank-you .shop_table.order_details tfoot tr:last-child td,
+section.woocommerce-thank-you .shop_table.order_details tfoot tr:last-child th {
+  background: var(--color-sec);
+  color: #fff;
+}
+section.woocommerce-thank-you .billing-address,
+section.woocommerce-thank-you .shipping-address {
+  background: #fafafa;
+  padding: 1rem;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+}
+section.woocommerce-thank-you .billing-address p,
+section.woocommerce-thank-you .shipping-address p {
+  margin: 0.5rem 0;
+}
+section.woocommerce-thank-you .billing-address p strong,
+section.woocommerce-thank-you .shipping-address p strong {
+  color: var(--color-sec);
+  display: inline-block;
+  width: 8rem; /* or auto if you prefer */
+}
+section.woocommerce-thank-you .greeting-comments {
+  background: #fafafa;
+  padding: 1rem;
+  border-radius: 3px;
+}
+section.woocommerce-thank-you .greeting-comments p {
+  margin: 0.5rem 0;
+}
+section.woocommerce-thank-you .greeting-comments p strong {
+  color: var(--color-main);
+  margin-right: 0.25rem;
+}
+
+/* Example media query adjustments */
+@media (max-width: 768px) {
+  section.woocommerce-thank-you .section-inner {
+    padding: 1rem;
+  }
+}
 /*# sourceMappingURL=style.css.map */
